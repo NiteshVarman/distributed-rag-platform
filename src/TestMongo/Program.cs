@@ -8,7 +8,7 @@ class Program
     static async Task Main()
     {
         // Connection string comes from the MONGODB_CONNECTION_STRING environment variable.
-        // e.g. (PowerShell):  $env:MONGODB_CONNECTION_STRING = "mongodb+srv://user:pass@cluster.mongodb.net/"
+        // e.g. (PowerShell):  $env:MONGODB_CONNECTION_STRING = "<your Atlas connection string>"
         var connectionString = Environment.GetEnvironmentVariable("MONGODB_CONNECTION_STRING");
         if (string.IsNullOrWhiteSpace(connectionString))
         {

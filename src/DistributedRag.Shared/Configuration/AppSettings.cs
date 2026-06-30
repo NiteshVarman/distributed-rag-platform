@@ -9,8 +9,9 @@ public class MongoDbSettings
     public const string SectionName = "MongoDB";
 
     /// <summary>
-    /// MongoDB Atlas connection string.
-    /// Example: mongodb+srv://ragadmin:PASSWORD@cluster.xxxxx.mongodb.net/?retryWrites=true&w=majority
+    /// MongoDB Atlas connection string. Supplied at runtime via environment
+    /// variables or Azure app settings (key 'MongoDB:ConnectionString').
+    /// Never commit a real connection string to source control.
     /// </summary>
     public string ConnectionString { get; set; } = string.Empty;
 

@@ -1,0 +1,28 @@
+# ───────────── .NET ─────────────
+bin/
+obj/
+*.user
+*.suo
+.vs/
+[Dd]ebug/
+[Rr]elease/
+
+# ───────────── Node / Extension (WXT) ─────────────
+node_modules/
+.output/
+.wxt/
+*.zip
+stats.html
+pnpm-debug.log*
+
+# ───────────── Secrets / local config ─────────────
+**/local.settings.json
+appsettings.*.Local.json
+*.env
+.env
+.env.*
+
+# ───────────── OS / Editor ─────────────
+.DS_Store
+Thumbs.db
+*.log

@@ -1,0 +1,30 @@
+{
+  "version": "2.0",
+  "logging": {
+    "applicationInsights": {
+      "samplingSettings": {
+        "isEnabled": true,
+        "excludedTypes": "Request"
+      }
+    },
+    "logLevel": {
+      "default": "Information",
+      "Microsoft": "Warning",
+      "Worker": "Information",
+      "Host.Triggers.DurableTask": "Information"
+    }
+  },
+  "extensions": {
+    "durableTask": {
+
+      "maxConcurrentActivityFunctions": 10,
+      "maxConcurrentOrchestratorFunctions": 5
+    },
+    "serviceBus": {
+      "prefetchCount": 1,
+      "autoCompleteMessages": false,
+      "maxConcurrentCalls": 5,
+      "maxAutoLockRenewalDuration": "00:05:00"
+    }
+  }
+}

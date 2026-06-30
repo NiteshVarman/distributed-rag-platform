@@ -1,0 +1,7 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DistributedRag.Api/DistributedRag.Api.csproj" />
+    <Project Path="src/DistributedRag.Functions/DistributedRag.Functions.csproj" />
+    <Project Path="src/DistributedRag.Shared/DistributedRag.Shared.csproj" />
+  </Folder>
+</Solution>

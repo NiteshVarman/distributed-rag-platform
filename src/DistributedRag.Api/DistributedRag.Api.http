@@ -1,0 +1,72 @@
+@DistributedRag.Api_HostAddress = http://localhost:5062
+
+### Health
+GET {{DistributedRag.Api_HostAddress}}/api/health
+Accept: application/json
+
+### Text action — summarize
+POST {{DistributedRag.Api_HostAddress}}/api/text-action
+Content-Type: application/json
+
+{
+  "action": "summarize",
+  "text": "Retrieval-Augmented Generation (RAG) is a technique where a language model retrieves relevant documents from an external knowledge base and uses them as context to generate grounded answers, reducing hallucination."
+}
+
+### Text action — translate (with language)
+POST {{DistributedRag.Api_HostAddress}}/api/text-action
+Content-Type: application/json
+
+{
+  "action": "translate",
+  "text": "Good morning, how are you?",
+  "targetLanguage": "Spanish"
+}
+
+### Text action — translate without language (expect 400)
+POST {{DistributedRag.Api_HostAddress}}/api/text-action
+Content-Type: application/json
+
+{
+  "action": "translate",
+  "text": "Good morning, how are you?"
+}
+
+### Text action — grammar
+POST {{DistributedRag.Api_HostAddress}}/api/text-action
+Content-Type: application/json
+
+{
+  "action": "grammar",
+  "text": "he go to school evryday and play footbal with his freinds"
+}
+
+### Text action — answer (general, no page URL)
+POST {{DistributedRag.Api_HostAddress}}/api/text-action
+Content-Type: application/json
+
+{
+  "action": "answer",
+  "text": "What is the capital of France?"
+}
+
+### Text action — answer (grounded; use a URL you've already processed)
+POST {{DistributedRag.Api_HostAddress}}/api/text-action
+Content-Type: application/json
+
+{
+  "action": "answer",
+  "text": "What is this page about?",
+  "pageUrl": "https://en.wikipedia.org/wiki/Morris_Park_Aerodrome"
+}
+
+### Text action — unknown action (expect 400)
+POST {{DistributedRag.Api_HostAddress}}/api/text-action
+Content-Type: application/json
+
+{
+  "action": "translateinator",
+  "text": "hello"
+}
+
+###
